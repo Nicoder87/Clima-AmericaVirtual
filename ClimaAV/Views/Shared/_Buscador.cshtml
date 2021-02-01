@@ -1,0 +1,34 @@
+﻿@model ClimaAV.Models.BuscadorModel
+
+<div class="row">
+    <div class="col-md-12">
+        <h3 class="titulo_box">Seleccioná la zona</h3>
+        <hr class="linea_azul" />
+    </div>
+</div>
+
+@using (Html.BeginForm("Index", "Home", FormMethod.Post))
+{
+    <div class="row">
+
+        <div class="col-md-12" style="padding-top:20px">
+            <div class="form-group">
+                @Html.LabelFor(model => model.IdPais)
+                @Html.DropDownList("IdPais", new SelectList(ViewBag.Paises, "Id", "Nombre"), "Seleccioná un país", new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.IdPais, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="col-md-12">
+            <div class="form-group">
+                @Html.LabelFor(model => model.IdCiudad)
+                @Html.DropDownList("IdCiudad", new SelectList(ViewBag.Ciudades, "CP", "Nombre"), "Seleccioná una ciudad", new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.IdCiudad, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-12">
+                <input type="submit" class="btn btn-av" style="width:100%;font-size:13px" value="BUSCAR" />
+            </div>
+        </div>
+    </div>
+}

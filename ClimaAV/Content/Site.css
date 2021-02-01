@@ -1,0 +1,84 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+    background-color: rgb(241,241,240);
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+.centrar {
+    margin: 0px auto
+}
+
+.btn-av {
+    background-color: rgb(254, 103, 88);
+    color:white;
+}
+
+.linea_naranja {
+    height: 2px;
+    background-color: rgb(254, 103, 88);
+}
+
+.linea_azul {
+    height: 2px;
+    background-color: rgb(49, 66, 132);
+}
+
+.titulo_box {
+    color: rgb(49, 66, 132);
+    text-align: center;
+}
+
+.grados-actual {
+    font-size:50px;
+}
+
+.dia-clima {
+    font-size: 25px;
+}
+
+.navbar-inverse-av {
+    background-color: red;
+}
+
+
+
+
+/* footer */
+
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    color: white;
+    background-color: black;
+    color: white;
+}
+
+.copyright {
+    float: left;
+}
+
+.america {
+    float: right;
+}

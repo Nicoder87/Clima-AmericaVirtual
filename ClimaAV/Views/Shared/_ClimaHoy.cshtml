@@ -1,0 +1,36 @@
+﻿@model ClimaAV.Models.ClimaActualModel
+
+<div class="row">
+    <div class="col-md-12">
+        <h3 class="titulo_box">Reporte del clima</h3>
+        <hr class="linea_azul" />
+    </div>
+</div>
+
+@if (Model.Ciudad == null)
+{
+    <div class="row">
+        <h3 class="titulo_box">Selecciona una Ciudad</h3>
+    </div>
+}
+else
+{
+<div class="row">
+    <div class="col-md-6">
+        <div>@Html.DisplayFor(m => m.Pais)</div>
+        <div>@Html.DisplayFor(m => m.Ciudad)</div>
+        <div class="dia-clima">@Html.DisplayFor(m => m.Dia)</div>
+        <div class="dia-clima">@Html.DisplayFor(m => m.Clima)</div>
+        <div class="grados-actual">@Html.DisplayFor(m => m.GC) °C</div>
+        <div>@Html.DisplayFor(m => m.GF) °F </div>
+    </div>
+
+    <div class="col-md-6">
+        <div><img src="@Model.Icono" alt="" class="img-responsive" /></div>
+        <div>Prob. de precipitaciones: @Html.DisplayFor(m => m.Precipitaciones)%</div>
+        <div>Humedad: @Html.DisplayFor(m => m.Humedad)%</div>
+        <div>Viento: a @Html.DisplayFor(m => m.Viento) km/h.</div>
+    </div>
+
+</div>
+}

@@ -1,0 +1,36 @@
+﻿@using ClimaAV.Models
+@model UsuarioModel
+
+@if (ClimaAV.Helpers.AccountHelper.GetCurrentUser() != null)
+{
+    using (Html.BeginForm("LogOff", "Login", FormMethod.Post, new { @class = "navbar-form navbar-left", role = "form" }))
+    {
+        <div class="form-group" style="padding-top:20px">
+            <label style="color:black">Usuario</label>
+            <h3 style="color:black">@ClimaAV.Helpers.AccountHelper.GetCurrentUser().Nombre</h3>
+        </div>
+        <div class="form-group" style="padding-top:20px">
+            <input class="btn btn-primary" type="submit" name="submit" value="CERRAR SESIÓN">
+        </div>
+    }
+}
+else
+{
+    using (Html.BeginForm("IniciarSesion", "Login", FormMethod.Post, new { @class = "navbar-form navbar-left", role = "form" }))
+    {
+        <div class="form-group" style="padding-top:20px">   
+            <label style="color:black"> Usuario </label>
+            @Html.TextBoxFor(m => m.UsuarioNombre, new { @class = "form-control user" })
+            @Html.ValidationMessageFor(m => m.UsuarioNombre, "", new { @class = "text-danger" })
+        </div>
+        <div class="form-group" style="padding-top:20px">
+            <label style="color:black"> Contraseña </label>
+            @Html.TextBoxFor(m => m.Password, new { @class = "form-control user", @type = "password" })
+            @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+        </div>
+
+        <div class="form-group" style="padding-top:20px">
+            <button type="submit" class="btn btn-av"> INICIAR SESIÓN </button>
+        </div>
+    }
+}

@@ -1,0 +1,36 @@
+﻿@model IEnumerable<ClimaAV.Models.ClimaSemanaModel>
+
+@{ var con = 0; }
+
+@if (Model.Count() != 0)
+{
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <div class="row">
+
+                @foreach (var item in Model)
+                {
+                    con = con + 1;
+                    if (con == 1)
+                    {
+                        <div class="col-sm-2 col-sm-offset-1" style="text-align:center">
+                            <div>@item.Dia </div>
+                            <div><img src="@item.Icono" alt="" class="img-responsive" /></div>
+                            <div><h3>@item.GC °C</h3> </div>
+                            <div><h3>@item.GF °F</h3></div>
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="col-sm-2" style="text-align:center">
+                            <div>@item.Dia </div>
+                            <div><img src="@item.Icono" alt="" class="img-responsive" /></div>
+                            <div><h3>@item.GC °C</h3> </div>
+                            <div><h3>@item.GF °F</h3></div>
+                        </div>
+                    }
+                }
+            </div>
+        </div>
+    </div>
+}
